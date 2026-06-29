@@ -1,6 +1,7 @@
 package com.erplogic.api.entity;
 
 
+import com.erplogic.api.utility.StakeholderClassification;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,7 +17,7 @@ import java.util.List;
 public class StakeholderMaster extends BaseEntity{
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String stakeholderClassification;
+    private StakeholderClassification stakeholderClassification;
 
     @Column(nullable = false, unique = true)
     private String stakeholderName;

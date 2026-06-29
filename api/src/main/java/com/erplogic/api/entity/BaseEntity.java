@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 
@@ -12,8 +13,10 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @UuidGenerator
+    @Column(updatable = false, nullable = false)
     private String id;
+
 
     @CreationTimestamp
     @Column(updatable = false)

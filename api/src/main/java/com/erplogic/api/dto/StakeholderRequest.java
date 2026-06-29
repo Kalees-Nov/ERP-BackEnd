@@ -1,5 +1,6 @@
 package com.erplogic.api.dto;
 
+import com.erplogic.api.utility.StakeholderClassification;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,8 @@ import jakarta.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StakeholderRequest {
+
+    private StakeholderClassification stakeholderClassification;
     @NotBlank
     private String stakeholderName;
 

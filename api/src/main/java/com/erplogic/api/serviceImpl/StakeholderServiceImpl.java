@@ -25,8 +25,10 @@ public class StakeholderServiceImpl implements StakeholderService {
 @Override
     public StakeholderResponse createStakeholder(StakeholderRequest request){
         StakeholderMaster stakeholderMaster = mapper.toEntity(request);
-        StakeholderResponse stakeholderResponse = mapper.toResponse(stakeholderMaster);
-        return stakeholderResponse;
+        StakeholderMaster savedStakeholder = repository.save(stakeholderMaster);
+
+        //StakeholderResponse stakeholderResponse = mapper.toResponse(savedStakeholder);
+       return mapper.toResponse(savedStakeholder);
 
     }
 @Override

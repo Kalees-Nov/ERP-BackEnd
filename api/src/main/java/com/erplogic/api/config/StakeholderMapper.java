@@ -52,6 +52,7 @@ public class StakeholderMapper {
         stakeholder.setInactiveReason(request.getInactiveReason());
 
         stakeholder.setNotes(request.getNotes());
+        stakeholder.setStakeholderClassification(request.getStakeholderClassification());
 
         return stakeholder;
 
@@ -69,6 +70,7 @@ public class StakeholderMapper {
         response.setRegistrationNo(stakeholderResponse.getRegistrationNo());
         response.setEmail(stakeholderResponse.getEmail());
         response.setLegalEntity(stakeholderResponse.getLegalEntity());
+        response.setActive(stakeholderResponse.getActive());
         return response;
     }
 }
