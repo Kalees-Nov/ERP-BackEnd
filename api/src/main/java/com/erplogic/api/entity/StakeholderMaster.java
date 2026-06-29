@@ -4,6 +4,9 @@ package com.erplogic.api.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "stakeholder_master")
 @Getter
@@ -71,4 +74,8 @@ public class StakeholderMaster extends BaseEntity{
 
     @Column(length = 1000)
     private String notes;
+
+    @OneToMany(mappedBy = "stakeholder",
+            cascade = CascadeType.ALL)
+    private List<StakeholderBranch> branches = new ArrayList<>();
 }
