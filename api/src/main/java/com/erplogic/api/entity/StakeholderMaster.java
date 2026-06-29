@@ -78,4 +78,10 @@ public class StakeholderMaster extends BaseEntity{
     @OneToMany(mappedBy = "stakeholder",
             cascade = CascadeType.ALL)
     private List<StakeholderBranch> branches = new ArrayList<>();
+
+    @OneToMany(
+            mappedBy = "stakeholder",
+            cascade = CascadeType.ALL
+    )
+    private List<StakeholderIndividual> individuals = new ArrayList<>();
 }
